@@ -1,0 +1,8 @@
+<?php
+
+class DatabaseConfig{
+var $mysqlDatabase = "";
+var $mysqlHost = "";
+var $mysqlUsername = "";
+var $mysqlPassword = "";
+}
