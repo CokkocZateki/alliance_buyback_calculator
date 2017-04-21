@@ -27,6 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `config` (
+  `uid` int(11) NOT NULL,
   `id` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `value` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -35,14 +36,15 @@ CREATE TABLE `config` (
 -- Dumping data for table `config`
 --
 
-INSERT INTO `config` (`id`, `value`) VALUES
-('buyBackRate', '0.71'),
-('allianceName', 'Random Alliance'),
-('version', '0.1.5'),
-('baseUrl', NULL),
-('clientId', NULL),
-('secretKey', NULL),
-('redirectURI', NULL);
+INSERT INTO `config` (`uid`, `id`, `value`) VALUES
+  (1, 'buyBackRate', '0.71'),
+  (2, 'allianceName', 'Random Alliance'),
+  (3, 'version', '0.1.5'),
+  (4, 'baseUrl', NULL),
+  (5, 'clientId', NULL),
+  (6, 'secretKey', NULL),
+  (7, 'redirectURI', NULL);
+
 
 -- --------------------------------------------------------
 
