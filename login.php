@@ -13,10 +13,12 @@ use GuzzleHttp\Client;
 extract($_GET);
 $config = new Config();
 $clientId = $config->clientId;
+$clientId = str_replace(' ', '', $clientId);
 echo $clientId;
 $secretKey = $config->secretKey;
 if (!isset($code)) {
     $redirectURI = $config->redirectURI;
+    $redirectURI = str_replace(' ', '', $redirectURI);
     $ssoRequestUrl =
         "https://login.eveonline.com/oauth/authorize?response_type=code&redirect_uri=$redirectURI&client_id=$clientId";
     header("Location: $ssoRequestUrl");
