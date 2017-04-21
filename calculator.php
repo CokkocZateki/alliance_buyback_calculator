@@ -35,7 +35,7 @@ $grandTotal = 0;
 
 foreach (preg_split("/((\r?\n)|(\r\n?))/", $items) as $item) {
     $type = new Type();
-    $item = preg_split('/\s+/', $item);//http://stackoverflow.com/a/1792977
+    $item = explode("\t", $item);//http://stackoverflow.com/a/1792977
     $type->icon = "<img src='https://image.eveonline.com/Type/" . $getTypeId($item[0]) . "_32.png'>";
     $type->name = $item[0];
     $item[1] = preg_replace('/[,]/', '', $item[1]);
