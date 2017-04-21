@@ -10,7 +10,7 @@ $config = new Config();
 <?php include "partials/header.php" ?>
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 col-xs-6 col-sm-6">
             <form id="buyBackItems">
                 <div class="form-group">
                     <label for="ore"> View your item(s) hangar in either list or details mode (or select items from your
@@ -34,7 +34,7 @@ $config = new Config();
                 </h4>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-xs-6 col-sm-6">
             <h3 id="results" style="display: none" class="text-warning">Results</h3>
             <div id="myTable">
             </div>

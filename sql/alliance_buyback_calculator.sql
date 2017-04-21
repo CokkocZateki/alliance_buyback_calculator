@@ -38,7 +38,7 @@ CREATE TABLE `config` (
 INSERT INTO `config` (`id`, `value`) VALUES
 ('buyBackRate', '0.71'),
 ('allianceName', 'Random Alliance'),
-('version', '0.1.4'),
+('version', '0.1.5'),
 ('baseUrl', NULL),
 ('clientId', NULL),
 ('secretKey', NULL),
