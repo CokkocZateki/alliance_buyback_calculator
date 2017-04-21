@@ -42,23 +42,22 @@ function listAllCharacters()
         <li><a data-toggle="tab" href="#menu1">Buyback Rate</a></li>
         <li><a data-toggle="tab" href="#menu2">Members</a></li>
     </ul>
-
+    <form class="form" id="generalSettingsForm">
+    </form>
     <div class="tab-content">
         <div id="home" class="tab-pane fade in active">
             <h3>General Settings</h3>
             <div class="row">
                 <div class="col col-md-6">
-                    <form class="form" id="generalSettingsForm">
-                        <div class="form-group">
-                            <label for="allianceName">Alliance/Corp Name
-                                <input id="allianceName" class="form-control" type="text" name="allianceName"
-                                       value="<?php echo $config->allianceName; ?>" required>
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <input id="submit" type="submit" class="btn btn-success" value="Save">
-                        </div>
-                    </form>
+                    <div class="form-group">
+                        <label for="allianceName">Alliance/Corp Name
+                            <input id="allianceName" class="form-control" type="text" name="allianceName"
+                                   value="<?php echo $config->allianceName; ?>" required form="generalSettingsForm">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <input id="submit" type="submit" class="btn btn-success" value="Save" form="generalSettingsForm">
+                    </div>
                 </div>
                 <div class="col-md-6">
                 </div>
@@ -66,18 +65,16 @@ function listAllCharacters()
         </div>
         <div id="menu1" class="tab-pane fade">
             <h3>Buyback Rate</h3>
-            <form class="form" id="buyBackRateForm">
-                <div class="form-group">
-                    <label for="buyBackRate"> Default Buyback Rate
-                        <input id="buyBackRate" class="form-control" type="number" min="0" step="0.01"
-                               name="buyBackRate"
-                               value="<?php echo $config->buyBackRate; ?>" required>
-                    </label>
-                </div>
-                <div class="form-group">
-                    <input id="submit" type="submit" class="btn btn-success" value="Save">
-                </div>
-            </form>
+            <div class="form-group">
+                <label for="buyBackRate"> Default Buyback Rate
+                    <input id="buyBackRate" class="form-control" type="number" min="0" step="0.01"
+                           name="buyBackRate"
+                           value="<?php echo $config->buyBackRate; ?>" required form="generalSettingsForm">
+                </label>
+            </div>
+            <div class="form-group">
+                <input id="submit" type="submit" class="btn btn-success" value="Save" form="generalSettingsForm">
+            </div>
         </div>
         <div id="menu2" class="tab-pane fade">
             <h3>Members</h3>
@@ -117,7 +114,8 @@ function listAllCharacters()
                                    placeholder="Character Id" aria-describedby="characterIdHelpBlock" required>
                         </div>
                         <div id="characterIdHelpBlock" class="helpBlock">
-                            <p class="text-info">Character ID can be obtained like <a href="https://forums.eveonline.com/default.aspx?g=posts&t=155577">so...</a> </p>
+                            <p class="text-info">Character ID can be obtained like <a
+                                        href="https://forums.eveonline.com/default.aspx?g=posts&t=155577">so...</a></p>
                         </div>
                         <div class="form-group">
                             <input class="btn btn-warning" type="submit" value="Add">

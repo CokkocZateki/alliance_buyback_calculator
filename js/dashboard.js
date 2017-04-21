@@ -1,8 +1,8 @@
-$(document).ready(function (event) {
-    $('#configForm').on('submit', function (event) {
+$(document).ready(function () {
+    $('#generalSettingsForm').on('submit', function (event) {
         event.preventDefault();
-        console.log('ready');
-        let config = $('#configForm').serializeArray();
+        console.log('buy back rate button');
+        let config = $('#generalSettingsForm').serializeArray();
         config = JSON.stringify(config);
         console.log(config);
         $.ajax('updateConfig.php', {
