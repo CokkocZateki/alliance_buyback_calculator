@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `config` (
   `uid` int(11) NOT NULL,
-  `id` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
-  `value` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL
+  `id` char(32) COLLATE utf8_unicode_ci NOT NULL,
+  `value` char(64) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
