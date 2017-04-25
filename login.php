@@ -1,5 +1,6 @@
 <?php
 
+require "Config.php";
 $config = new Config();
 if(!$config->debug){
     error_reporting(E_ALL);
@@ -9,8 +10,6 @@ if(!$config->debug){
 session_start();
 
 require 'vendor/autoload.php';
-
-require "Config.php";
 require "dbFunctions.php";
 
 use GuzzleHttp\Client;
