@@ -7,6 +7,7 @@ ini_set('display_errors', 1);
 require 'vendor/autoload.php';
 
 include "Config.php";
+include "dbFunctions.php";
 
 use GuzzleHttp\Client;
 
