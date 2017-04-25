@@ -6,27 +6,8 @@ if (isset($isLoggedIn) & $isLoggedIn = true) {
 } else {
     header('Location: index.php');
 }
-include "Config.php";
+require "Config.php";
 $config = new Config();
-
-function listAllCharacters()
-{
-    $characters = array();
-    $databaseConfig = new DatabaseConfig();
-    $mysqli = new mysqli($databaseConfig->mysqlHost, $databaseConfig->mysqlUsername, $databaseConfig->mysqlPassword, $databaseConfig->mysqlDatabase);
-    if (mysqli_connect_errno()) {
-        $error = mysqli_connect_error();
-        trigger_error("Database Connection Error, $error", E_USER_NOTICE);
-    }
-    $query = "SELECT * FROM users";
-    if ($result = $mysqli->query($query)) {
-        while ($row = $result->fetch_assoc()) {
-            array_push($characters, $row);
-        }
-        $result->close();
-    }
-    return $characters;
-}
 
 ?>
 <!DOCTYPE html>

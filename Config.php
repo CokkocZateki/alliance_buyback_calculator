@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-include "DatabaseConfig.php";
+require "DatabaseConfig.php";
 
 class Config
 {
@@ -13,6 +13,7 @@ class Config
     var $clientId;
     var $secretKey;
     var $redirectURI;
+    var $debug;
 
     public function __construct()
     {
@@ -30,6 +31,7 @@ class Config
         $this->clientId = $clientId;
         $this->secretKey = $secretKey;
         $this->redirectURI = $redirectURI;
+        $this->debug = false;
     }
 }
 
@@ -54,5 +56,26 @@ function getConfig($mysqlHost, $mysqlUsername, $mysqlPassword, $mysqlDatabase)
     return $config;
 }
 
+
+function listAllCharacters()
+{
+    $characters = array();
+    $databaseConfig = new DatabaseConfig();
+    $mysqli = new mysqli($databaseConfig->mysqlHost, $databaseConfig->mysqlUsername, $databaseConfig->mysqlPassword, $databaseConfig->mysqlDatabase);
+    if (mysqli_connect_errno()) {
+        $error = mysqli_connect_error();
+        trigger_error("Database Connection Error, $error", E_USER_NOTICE);
+    }
+    $query = "SELECT * FROM users";
+    if ($result = $mysqli->query($query)) {
+        while ($row = $result->fetch_assoc()) {
+            array_push($characters, $row);
+        }
+        $result->close();
+    }
+    return $characters;
+}
+
+?>
 
 

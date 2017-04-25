@@ -1,18 +1,21 @@
 <?php
 
+$config = new Config();
+if(!$config->debug){
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+}
+
 session_start();
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 require 'vendor/autoload.php';
 
-include "Config.php";
-include "dbFunctions.php";
+require "Config.php";
+require "dbFunctions.php";
 
 use GuzzleHttp\Client;
 
 extract($_GET);
-$config = new Config();
 $clientId = $config->clientId;
 $clientId = str_replace(' ', '', $clientId);
 echo $clientId;

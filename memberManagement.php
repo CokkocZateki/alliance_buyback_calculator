@@ -1,7 +1,5 @@
 <?php
 include "DatabaseConfig.php";
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 extract($_GET);
 $databaseConfig = new DatabaseConfig();
 $mysqli = new mysqli($databaseConfig->mysqlHost, $databaseConfig->mysqlUsername, $databaseConfig->mysqlPassword, $databaseConfig->mysqlDatabase);

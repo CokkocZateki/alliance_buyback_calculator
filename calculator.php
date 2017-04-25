@@ -1,8 +1,8 @@
 <?php
 
-include "Config.php";
-include "typeHelpers.php";
-include "priceHelpers.php";
+require "Config.php";
+require "typeHelpers.php";
+require "priceHelpers.php";
 
 $config = new Config();
 
